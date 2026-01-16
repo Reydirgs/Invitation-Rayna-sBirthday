@@ -50,25 +50,44 @@
 
     .star { position: fixed; width: 3px; height: 3px; background: #FDB813; border-radius: 50%; box-shadow: 0 0 10px #FDB813; animation: twinkle 3s infinite ease-in-out; z-index: 0; }
     @keyframes twinkle { 0%,100% {opacity:0.3} 50% {opacity:1} }
+
+    /* ANIMASI DASAR */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeUp 1s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+    .delay-4 { animation-delay: 1.2s; }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>✨ Dresscode ✨</h1>
+    <h1 class="fade-up">✨ Dresscode ✨</h1>
 
-    <div class="wardrobe-box">
+    <div class="wardrobe-box fade-up delay-1">
       <h3>👕 Atasan (Tops)</h3>
       <p style="color: #A3C1AD;">Warna Navy Blue Starry Night</p>
-      <div class="color-circle"></div>
+      <div class="color-circle fade-up delay-2"></div>
     </div>
 
-    <div class="wardrobe-box">
+    <div class="wardrobe-box fade-up delay-3">
       <h3>👖 Bawahan (Bottoms)</h3>
       <p style="color: #FFF; font-size: 1.2em;"><b>BEBAS / FREE STYLE</b></p>
       <p style="color: #A3C1AD; font-size: 0.9em;">Senyaman Kalian</p>
     </div>
 
-    <a href="#" class="back" id="btnBack">← Kembali</a>
+    <a href="#" class="back fade-up delay-4" id="btnBack">← Kembali</a>
   </div>
 
   <script>
