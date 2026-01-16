@@ -68,18 +68,20 @@
       <p style="color: #A3C1AD; font-size: 0.9em;">Senyaman Kalian</p>
     </div>
 
-    <a href="#" class="back">← Back to Invitation</a>
+    <a href="#" class="back" id="btnBack">← Kembali</a>
   </div>
 
   <script>
-    // Mengambil nama dari URL saat ini
-  const params = new URLSearchParams(window.location.search);
-  const nama = params.get("nama");
-
-  // Update link tombol kembali agar tetap membawa parameter nama
-  const btnBack = document.querySelector('.back');
-  if (nama && btnBack) {
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+    const btnBack = document.getElementById("btnBack");
+    
+    if (nama) {
+    // Jika ada nama, link balik ke index bawa nama tersebut
     btnBack.href = "index.html?nama=" + encodeURIComponent(nama);
+    } else {
+    // Jika tidak ada nama, link balik ke index biasa
+    btnBack.href = "index.html";
   }
     for (let i = 0; i < 80; i++) {
       const star = document.createElement("div");
