@@ -46,8 +46,8 @@
       📍 <b>Boncafe Pentacity Mall</b>
     </div>
     <a href="#" class="btn btn-secondary" id="linkDresscode">Dresscode✨</a>
-    <a href="rules.html" class="btn btn-secondary">Event Rules 📜</a>
-    <a href="menu.html" class="btn btn-main" id="linkMenu">Pilih Menu Makanan 🍽️</a>
+    <a href="#" class="btn btn-secondary" id="linkRules">Event Rules 📜</a>
+    <a href="#" class="btn btn-main" id="linkMenu">Pilih Menu Makanan 🍽️</a>
   </div>
 
   <script>
@@ -57,6 +57,7 @@
       document.getElementById("namaTamu").innerText = nama;
       document.getElementById("linkMenu").href = "menu.html?nama=" + encodeURIComponent(nama);
       document.getElementById("linkDresscode").href = "dresscode.html?nama=" + encodeURIComponent(nama);
+      document.getElementById("linkRules").href = "rules.html?nama=" + encodeURIComponent(nama);
     }
     for (let i = 0; i < 100; i++) {
       const star = document.createElement("div");
