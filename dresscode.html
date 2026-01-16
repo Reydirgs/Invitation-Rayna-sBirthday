@@ -73,16 +73,12 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const nama = params.get("nama");
-    const btnBack = document.getElementById("btnBack");
-    
-    if (nama) {
-    // Jika ada nama, link balik ke index bawa nama tersebut
-    btnBack.href = "index.html?nama=" + encodeURIComponent(nama);
-    } else {
-    // Jika tidak ada nama, link balik ke index biasa
-    btnBack.href = "index.html";
-  }
+const nama = params.get("nama") || "";
+const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
+
+document.getElementById("btnBack").href =
+  nama ? `${base}index.html?nama=${encodeURIComponent(nama)}` : `${base}index.html`;
+
     for (let i = 0; i < 80; i++) {
       const star = document.createElement("div");
       star.className = "star";
