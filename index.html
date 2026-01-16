@@ -45,30 +45,27 @@
       ⏰ 12.00 WITA<br>
       📍 <b>Boncafe Pentacity Mall</b>
     </div>
-      <a href="#" class="btn btn-main" id="linkMenu">Pilih Menu Makanan 🍽️</a>
-      <a href="#" class="btn btn-secondary" id="linkDresscode">Dresscode ✨</a>
-      <a href="#" class="btn btn-secondary" id="linkRules">Event Rules 📜</a>
+      <a href="javascript:void(0)" class="btn btn-secondary" id="linkDresscode">Dresscode ✨</a>
+<a href="javascript:void(0)" class="btn btn-secondary" id="linkRules">Event Rules 📜</a>
+<a href="javascript:void(0)" class="btn btn-main" id="linkMenu">Pilih Menu 🍽️</a>
   </div>
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const nama = params.get("nama");
-    const linkMenu = document.getElementById("linkMenu");
-    const linkDresscode = document.getElementById("linkDresscode");
-    const linkRules = document.getElementById("linkRules");
-    
-    if (nama) {
-      document.getElementById("namaTamu").innerText = nama;
-      document.getElementById("linkMenu").href = "menu.html?nama=" + encodeURIComponent(nama);
-      document.getElementById("linkDresscode").href = "dresscode.html?nama=" + encodeURIComponent(nama);
-      document.getElementById("linkRules").href = "rules.html?nama=" + encodeURIComponent(nama);
-    } else {
-    // JIKA TIDAK ADA NAMA, arahkan ke link biasa (agar tombol tetap berfungsi)
-    linkMenu.href = "menu.html";
-    linkDresscode.href = "dresscode.html";
-    linkRules.href = "rules.html";
+  const nama = params.get("nama") || "";
+
+  function goTo(page) {
+    const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
+    const url = nama
+      ? `${base}${page}?nama=${encodeURIComponent(nama)}`
+      : `${base}${page}`;
+    window.location.href = url;
   }
-    
+
+  document.getElementById("linkMenu").onclick = () => goTo("menu.html");
+  document.getElementById("linkDresscode").onclick = () => goTo("dresscode.html");
+  document.getElementById("linkRules").onclick = () => goTo("rules.html");
+
     for (let i = 0; i < 100; i++) {
       const star = document.createElement("div");
       star.className = "star";
