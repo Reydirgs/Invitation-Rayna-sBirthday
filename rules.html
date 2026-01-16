@@ -118,14 +118,12 @@
 
   <script>
     const params = new URLSearchParams(window.location.search);
-    const nama = params.get("nama");
-    const btnBack = document.getElementById("btnBack");
-    
-    if (nama) {
-      btnBack.href = "index.html?nama=" + encodeURIComponent(nama);
-    } else {
-      btnBack.href = "index.html";
-    }
+const nama = params.get("nama") || "";
+const base = window.location.pathname.replace(/\/[^\/]*$/, "/");
+
+document.getElementById("btnBack").href =
+  nama ? `${base}index.html?nama=${encodeURIComponent(nama)}` : `${base}index.html`;
+
     for (let i = 0; i < 80; i++) {
       const star = document.createElement("div");
       star.className = "star";
