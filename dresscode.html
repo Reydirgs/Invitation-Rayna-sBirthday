@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dresscode - Rayna's Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora&display=swap" rel="stylesheet">
+  <style>
+    /* CSS konsisten dengan sebelumnya */
+    body {
+      margin: 0; min-height: 100vh;
+      background: linear-gradient(180deg, #091E3D 0%, #1B2735 50%, #204060 100%) no-repeat fixed;
+      color: #FEE440; font-family: 'Lora', serif;
+      display: flex; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; overflow-x: hidden;
+    }
+    body::before {
+      content: ""; position: fixed; width: 200%; height: 200%; top: -50%; left: -50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 1%, transparent 20%);
+      animation: swirl 60s linear infinite; z-index: -1;
+    }
+    @keyframes swirl { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .container {
+      width: 100%; max-width: 500px;
+      background: rgba(13, 27, 42, 0.85); backdrop-filter: blur(15px);
+      padding: 40px 30px; border-radius: 30px; text-align: center;
+      border: 2px solid #FDB813; box-shadow: 0 15px 35px rgba(0,0,0,0.5); z-index: 10;
+    }
+
+    h1 { font-family: 'Playfair Display', serif; color: #FDB813;text-shadow: 0 0 10px #FDB813, 0 0 20px #FDB813, 0 0 30px #FDB813; margin-bottom: 30px; }
+    h3 { font-family: 'Playfair Display', serif; color: #FFF; margin-bottom: 5px; }
+
+    .wardrobe-box {
+      background: rgba(255,255,255,0.05); padding: 20px; border-radius: 20px; margin-bottom: 20px;
+      border: 1px solid rgba(253, 184, 19, 0.2);
+    }
+
+    .color-circle {
+      width: 80px; height: 80px; border-radius: 50%; margin: 15px auto;
+      background: #1E3A8A; /* Navy Blue */
+      box-shadow: 0 0 25px #1E3A8A; border: 3px solid white;
+    }
+
+    .back {
+      display: inline-block; padding: 12px 25px; border-radius: 50px;
+      background: transparent; color: #FDB813; text-decoration: none;
+      font-weight: bold; border: 1px solid #FDB813; transition: 0.3s;
+    }
+    .back:hover { background: #FDB813; color: #001F3F; }
+
+    .star { position: fixed; width: 3px; height: 3px; background: #FDB813; border-radius: 50%; box-shadow: 0 0 10px #FDB813; animation: twinkle 3s infinite ease-in-out; z-index: 0; }
+    @keyframes twinkle { 0%,100% {opacity:0.3} 50% {opacity:1} }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>✨ Dresscode ✨</h1>
+
+    <div class="wardrobe-box">
+      <h3>👕 Atasan (Tops)</h3>
+      <p style="color: #A3C1AD;">Warna Navy Blue Starry Night</p>
+      <div class="color-circle"></div>
+    </div>
+
+    <div class="wardrobe-box">
+      <h3>👖 Bawahan (Bottoms)</h3>
+      <p style="color: #FFF; font-size: 1.2em;"><b>BEBAS / FREE STYLE</b></p>
+      <p style="color: #A3C1AD; font-size: 0.9em;">Senyaman Kalian</p>
+    </div>
+
+    <a href="index.html" class="back">← Back to Invitation</a>
+  </div>
+
+  <script>
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>

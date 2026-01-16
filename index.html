@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rayna's Birthday Invitation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0; padding: 40px 20px; min-height: 100vh;
+      background: linear-gradient(180deg, #091E3D 0%, #1B2735 50%, #204060 100%) no-repeat fixed;
+      color: #FEE440; font-family: 'Lora', serif;
+      display: flex; justify-content: center; align-items: center; overflow-x: hidden; box-sizing: border-box;
+    }
+    body::before {
+      content: ""; position: fixed; width: 200%; height: 200%; top: -50%; left: -50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 1%, transparent 20%);
+      animation: swirl 60s linear infinite; z-index: -1;
+    }
+    @keyframes swirl { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .card {
+      width: 100%; max-width: 450px; position: relative;
+      background: rgba(13, 27, 42, 0.85); backdrop-filter: blur(15px);
+      padding: 40px 30px; border-radius: 30px; text-align: center;
+      border: 2px solid #FDB813; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5); z-index: 10;
+    }
+    h1 { font-family: 'Playfair Display', serif; font-size: 28px; color: #FDB813;text-shadow: 0 0 10px #FDB813, 0 0 20px #FDB813, 0 0 30px #FDB813; margin-top: 0; }
+    .name { font-family: 'Playfair Display', serif; font-size: 26px; color: #FFFFFF;text-shadow: 0 0 10px #FFFFFF, 0 0 20px #FFFFFF, 0 0 30px #FFFFFF ; margin: 15px 0; }
+    .invite { font-style: italic; color: #A3C1AD; margin-bottom: 25px; }
+    .info { color: #E0E0E0; line-height: 1.8; margin-bottom: 30px; border-top: 1px solid rgba(253, 184, 19, 0.3); padding-top: 20px; }
+    .btn { display: block; margin: 12px auto; width: 85%; padding: 14px; border-radius: 50px; text-decoration: none; font-weight: bold; transition: 0.3s; }
+    .btn-main { background: linear-gradient(135deg, #FDB813, #FF8C00); color: #001F3F; }
+    .btn-secondary { background: transparent; color: #FDB813; border: 1px solid #FDB813; }
+    .star { position: fixed; width: 3px; height: 3px; background: #FDB813; border-radius: 50%; box-shadow: 0 0 10px #FDB813; animation: twinkle 3s infinite ease-in-out; z-index: 0; }
+    @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>✨ Rayna's Birthday Invitation ✨</h1>
+    <div class="name" id="namaTamu">Tamu Spesial</div>
+    <div class="invite">"The sight of the stars makes me dream."</div>
+    <div class="info">
+      📅 <b>18 Januari 2026</b><br>
+      ⏰ 12.00 WITA<br>
+      📍 <b>Boncafe Pentacity Mall</b>
+    </div>
+    <a href="dresscode.html" class="btn btn-secondary">Dresscode ✨</a>
+    <a href="rules.html" class="btn btn-secondary">Event Rules 📜</a>
+    <a href="menu.html" class="btn btn-main" id="linkMenu">Pilih Menu Makanan 🍽️</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get("nama");
+    if (nama) {
+      document.getElementById("namaTamu").innerText = nama;
+      document.getElementById("linkMenu").href = "menu.html?nama=" + encodeURIComponent(nama);
+    }
+    for (let i = 0; i < 100; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rules - Rayna's Birthday</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lora&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(180deg, #091E3D 0%, #1B2735 50%, #204060 100%) no-repeat fixed;
+      color: #FEE440;
+      font-family: 'Lora', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.05) 1%, transparent 20%);
+      top: -50%; left: -50%;
+      animation: swirl 60s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes swirl { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .box {
+      width: 100%;
+      max-width: 480px;
+      background: rgba(13, 27, 42, 0.85);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px;
+      border-radius: 30px;
+      border: 2px solid #FDB813;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      z-index: 10;
+    }
+
+    h1 { 
+      font-family: 'Playfair Display', serif; 
+      text-align: center; 
+      color: #FDB813;
+      text-shadow: 0 0 10px #FDB813, 0 0 20px #FDB813, 0 0 30px #FDB813;
+      margin-top: 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    li {
+      position: relative;
+      padding-left: 35px;
+      margin-bottom: 20px;
+      line-height: 1.6;
+      color: #E0E0E0;
+    }
+
+    /* Custom Bullet Star */
+    li::before {
+      content: "⭐";
+      position: absolute;
+      left: 0;
+      color: #FDB813;
+    }
+
+    .back {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, #FDB813, #FF8C00);
+      color: #001F3F;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .back:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(253,184,19,0.4); }
+
+    .star {
+      position: fixed;
+      width: 3px; height: 3px;
+      background: #FDB813;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #FDB813;
+      animation: twinkle 3s infinite ease-in-out;
+      z-index: 0;
+    }
+    @keyframes twinkle { 0%,100% {opacity:0.3} 50% {opacity:1} }
+  </style>
+</head>
+<body>
+
+  <div class="box">
+    <h1>✨ Event Rules ✨</h1>
+
+    <ul>
+      <li>Datang tepat waktu ⏰</li>
+      <li>Gunakan dresscode sesuai palet warna ✨</li>
+      <li>Jaga kenyamanan dan sopan santun di dalam venue 🤍</li>
+      <li>Dilarang membawa barang yang mengganggu estetika 🚫</li>
+      <li>Nikmati undangan dan biarkan imajinasimu bersinar ⭐</li>
+    </ul>
+
+    <a href="index.html" class="back">← Back to Invitation</a>
+  </div>
+
+  <script>
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.top = Math.random() * 100 + "vh";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>
