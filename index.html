@@ -59,6 +59,13 @@
       document.getElementById("linkDresscode").href = "dresscode.html?nama=" + encodeURIComponent(nama);
       document.getElementById("linkRules").href = "rules.html?nama=" + encodeURIComponent(nama);
     }
+    } else {
+    // JIKA TIDAK ADA NAMA, arahkan ke link biasa (agar tombol tetap berfungsi)
+    linkMenu.href = "menu.html";
+    linkDresscode.href = "dresscode.html";
+    linkRules.href = "rules.html";
+  }
+    
     for (let i = 0; i < 100; i++) {
       const star = document.createElement("div");
       star.className = "star";
