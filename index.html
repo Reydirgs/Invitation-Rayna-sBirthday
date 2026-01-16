@@ -33,22 +33,42 @@
     .btn-secondary { background: transparent; color: #FDB813; border: 1px solid #FDB813; }
     .star { position: fixed; width: 3px; height: 3px; background: #FDB813; border-radius: 50%; box-shadow: 0 0 10px #FDB813; animation: twinkle 3s infinite ease-in-out; z-index: 0; }
     @keyframes twinkle { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+    /* ANIMASI DASAR */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeUp 1s ease forwards
+    }
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+    .delay-4 { animation-delay: 1.2s; }
+    .delay-5 { animation-delay: 1.5s; }
+    .delay-6 { animation-delay: 1.8s; }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>✨ Rayna's Birthday Invitation ✨</h1>
-    <div class="name" id="namaTamu">Tamu Spesial</div>
-    <div class="invite">"You are cordially invited to Rayna’s Birthday Celebration,
+    <h1 class="fade-up">✨ Rayna's Birthday Invitation ✨</h1>
+    <div class="name fade-up delay-1" id="namaTamu">Tamu Spesial</div>
+    <div class="invite fade-up delay-2">"You are cordially invited to Rayna’s Birthday Celebration,
 under a Starry Night theme."</div>
-    <div class="info">
+    <div class="info fade-up delay-3">
       📅 <b>18 Januari 2026</b><br>
       ⏰ 12.00 WITA<br>
       📍 <b>Boncafe Pentacity Mall</b>
     </div>
-      <a href="javascript:void(0)" class="btn btn-secondary" id="linkDresscode">Dresscode ✨</a>
-<a href="javascript:void(0)" class="btn btn-secondary" id="linkRules">Event Rules 📜</a>
-<a href="javascript:void(0)" class="btn btn-main" id="linkMenu">Pilih Menu 🍽️</a>
+      <a href="javascript:void(0)" class="btn btn-secondary fade-up delay-4" id="linkDresscode">Dresscode ✨</a>
+      <a href="javascript:void(0)" class="btn btn-secondary fade-up delay-5" id="linkRules">Event Rules 📜</a>
+      <a href="javascript:void(0)" class="btn btn-main fade-up delay-6" id="linkMenu">Pilih Menu 🍽️</a>
   </div>
 
   <script>
