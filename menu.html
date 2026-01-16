@@ -16,26 +16,46 @@
     .radio-item { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; cursor: pointer; font-size: 14px; }
     .btn-submit { width: 100%; padding: 15px; margin-top: 30px; background: linear-gradient(135deg, #FDB813, #FF8C00); color: #001F3F; border: none; border-radius: 50px; font-weight: bold; cursor: pointer; }
     .btn-submit:disabled { background: #555; cursor: not-allowed; }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(15px);
+      animation: fadeUp 1s ease forwards;
+    }
+    
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+    .delay-4 { animation-delay: 1.2s; }
+    .delay-5 { animation-delay: 1.5s; }
+    .delay-6 { animation-delay: 1.8s; }
+    
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>🍽️ Pilih Menu</h1>
+    <h1 class="fade-up">🍽️ Pilih Menu</h1>
     <form id="menuForm">
-      <div class="input-group">
+      <div class="input-group fade-up delay-1">
         <label style="color:#A3C1AD">Pesanan Untuk :</label>
         <input type="text" id="nama" name="Nama" readonly>
       </div>
 
-      <h2>Choice of Snacks</h2>
-      <div class="option-container">
+      <h2 class="fade-up delay-2">Choice of Snacks</h2>
+      <div class="option-container fade-up delay-2">
         <label class="radio-item"><input type="radio" name="Snack" value="Cocktail Salad" required> Cocktail Salad</label>
         <label class="radio-item"><input type="radio" name="Snack" value="Risolles"> Risolles</label>
         <label class="radio-item"><input type="radio" name="Snack" value="Cocktail Spring Roll"> Spring Roll</label>
       </div>
 
-      <h2>Choice of Steaks</h2>
-      <div class="option-container">
+      <h2 class="fade-up delay-3">Choice of Steaks</h2>
+      <div class="option-container fade-up delay-3">
         <label class="radio-item"><input type="radio" name="Steak" value="Chicken Steak" required> Chicken</label>
         <label class="radio-item"><input type="radio" name="Steak" value="Hamburger Steak"> Hamburger</label>
         <label class="radio-item"><input type="radio" name="Steak" value="Tenderloin Steak"> Tenderloin</label>
@@ -44,21 +64,21 @@
         <label class="radio-item"><input type="radio" name="Steak" value="Galantine"> Galantine</label>
       </div>
 
-      <h2>Choice of Desserts</h2>
-      <div class="option-container">
+      <h2 class="fade-up delay-4">Choice of Desserts</h2>
+      <div class="option-container fade-up delay-4">
         <label class="radio-item"><input type="radio" name="Dessert" value="Ice Cream" required>Single Scoop Ice Cream</label>
         <label class="radio-item"><input type="radio" name="Dessert" value="Mini Es Puter Betawi">Mini Es Puter Betawi</label>
       </div>
 
-      <h2>Choice of Drinks</h2>
-      <div class="option-container">
+      <h2 class="fade-up delay-5">Choice of Drinks</h2>
+      <div class="option-container fade-up delay-5">
         <label class="radio-item"><input type="radio" name="Drink" value="Iced Tea" required>Iced Tea</label>
         <label class="radio-item"><input type="radio" name="Drink" value="Hot Tea" required>Hot Tea</label>
         <label class="radio-item"><input type="radio" name="Drink" value="Mineral Water"> Mineral Water</label>
         <label class="radio-item"><input type="radio" name="Drink" value="Mineral Water"> Soft Drink</label>
       </div>
 
-      <button type="submit" class="btn-submit" id="submitBtn">Simpan Pilihan ✨</button>
+      <button type="submit" class="btn-submit fade-up delay-6" id="submitBtn">Simpan Pilihan ✨</button>
     </form>
   </div>
 
