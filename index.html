@@ -57,8 +57,9 @@
     .name-reveal {
       opacity: 0;
       transform: scale(0.85);
-      animation: nameReveal;
+      animation: nameReveal 1.5s ease-out forwards;
       animation-delay: 2.3s; /* PALING LAMA */
+      will-change: opacity, transform;
     }
     
     @keyframes nameReveal {
@@ -73,6 +74,7 @@
         text-shadow: 0 0 15px rgba(255,255,255,0.6);
       }
       100% {
+        opacity: 1;
         transform: scale(1);
         text-shadow: 
           0 0 10px rgba(255,255,255,0.8),
